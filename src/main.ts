@@ -1,4 +1,4 @@
-import { ValidationPipe } from '@nestjs/common';
+import { flatten, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -8,6 +8,7 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      forbidUnknownValues: false,
       transform: true,
     }),
   );
