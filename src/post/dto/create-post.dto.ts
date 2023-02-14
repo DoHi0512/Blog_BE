@@ -1,4 +1,4 @@
-import { IsString } from 'class-validator';
+import { IsArray, IsNumber, IsString } from 'class-validator';
 
 export class CreatePostDTO {
   @IsString()
@@ -6,5 +6,10 @@ export class CreatePostDTO {
 
   @IsString()
   readonly title: string;
-  //   tag: string[];
+
+  @IsString()
+  readonly image: string;
+
+  @IsArray()
+  readonly tag: string[];
 }
