@@ -6,7 +6,7 @@ import { PostService } from './post.service';
 export default class PostController {
   constructor(private readonly postService: PostService) {}
 
-  @Post('/')
+  @Post('/create')
   create(@Body() createPostDTO: CreatePostDTO) {
     console.log(createPostDTO)
     this.postService.create(createPostDTO);
