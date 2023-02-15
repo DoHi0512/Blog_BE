@@ -8,7 +8,19 @@ export default class PostController {
 
   @Post('/create')
   create(@Body() createPostDTO: CreatePostDTO) {
-    console.log(createPostDTO)
+    console.log(createPostDTO);
     this.postService.create(createPostDTO);
+  }
+
+  @Get('/all')
+  getAll() {
+    console.log('all');
+    return this.postService.getAll();
+  }
+
+  @Get('/one/:id')
+  getById(@Param('id') id: number) {
+    console.log('id');
+    return this.postService.getById(id);
   }
 }
