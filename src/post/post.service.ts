@@ -9,7 +9,10 @@ export class PostService {
     let newPost = new PostEntity();
     newPost.content = createPostDTO.content;
     newPost.title = createPostDTO.title;
-    newPost.image = createPostDTO.image;
+    if (createPostDTO.image === '') {
+      newPost.image =
+        'https://tecoble.techcourse.co.kr/static/348a6c1ea3a4fa8b6990e3e3bf4e8490/8ac6f/sample2.png';
+    } else newPost.image = createPostDTO.image;
     newPost.tag = createPostDTO.tag;
     this.postRepository.save(newPost);
   }
