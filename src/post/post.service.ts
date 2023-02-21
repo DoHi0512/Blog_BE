@@ -24,4 +24,13 @@ export class PostService {
   getById(id: number) {
     return this.postRepository.findOneById(id);
   }
+
+  modify(modifyPostDTO: PostEntity) {
+    this.postRepository.update(modifyPostDTO.postId, modifyPostDTO);
+    return 1;
+  }
+
+  delete(postId : number){
+    this.postRepository.delete(postId)
+  }
 }

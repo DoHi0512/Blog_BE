@@ -9,23 +9,23 @@ const today =
 @Entity()
 export class PostEntity {
   @PrimaryGeneratedColumn()
-  postId: number;
+  postId?: number;
 
   @Column({ length: 10000 })
-  content: string;
+  content?: string;
 
   @Column()
-  title: string;
+  title?: string;
 
   @Column({ default: 0 })
-  view: number;
+  view?: number;
 
   @Column({ default: today })
-  date: string;
+  date?: string;
 
   @Column('simple-array')
-  tag: string[];
+  tag?: string[];
 
   @Column()
-  image: string;
+  image?: string;
 }

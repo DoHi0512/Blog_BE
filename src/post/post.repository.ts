@@ -1,7 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { EntityRepository, Repository } from 'typeorm';
+import { CustomRepository } from 'src/share/decorator';
 import { PostEntity } from './post.entity';
+import { Repository } from 'typeorm';
 
-@Injectable()
-@EntityRepository(PostEntity)
-export class PostRepository extends Repository<PostEntity> {}
+@CustomRepository(PostEntity)
+export class PostRepository extends Repository<PostEntity> {
+    
+
+}
